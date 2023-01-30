@@ -46,18 +46,18 @@ console.log(names);
 //__________________________________________////
 // OBJECTS ///
 
-const person = {
-    firstName: 'Linn',
-    lastName: 'Øst',
-    age: 36,
-    hobbier: ('hoopdance', 'danse', 'drikke'),
-    kjønn: 'jente',
-    isWorking: true,
+//const person = {
+    //firstName: 'Linn',
+    //lastName: 'Øst',
+    //age: 36,
+    //hobbier: ('hoopdance', 'danse', 'drikke'),
+    //kjønn: 'jente',
+    //isWorking: true,
     // isteden for å lage koden const firstName.
 //console.log (person.firstName)
 //person.firstName = 'Ole'
 
-}
+//}
 
 
 const persons = [
@@ -124,7 +124,7 @@ const ansatte = [
             fornavn: 'Linn',
             etternavn: 'Skravledal',
             alder: 36,
-            født: 1987-01-08,
+            født: '1987-01-08',
         },
 
         yrke: [
@@ -222,7 +222,6 @@ const ansatte = [
         
 
         },
-
     },
     {
             person: {
@@ -231,11 +230,14 @@ const ansatte = [
             alder: 32,
             født: '1003-06-19',
             },
-            yrke: ['Programmerer', 'Lærer'],
+            yrke: [
+                'Programmerer', 'Lærer'
+            ],
+
             adresse: { 
                 gate: 'Åselia',
                 husnummer: 200,
-                postkode: 2020,
+                postkode: '2020',
                 by: 'Oslo',
                 epost: 'lalala00@gmail.com',
             },
@@ -247,15 +249,51 @@ const ansatte = [
                 alder: 28,
                 født: '1990-12-06',
             },
-            yrke: ['Lærer', 'Blomsterdekoratør'],
+            yrke: [
+                'Lærer', 'Blomsterdekoratør'
+            ],
             adresse: {
                 gate: 'Hellesletta',
                 husnummer: 4,
-                postkode: 1900,
+                postkode: '1900',
                 by: 'Fetsund',
-                epost: 'lilili22@gmail.com',
+                epost: 'lilili22@gmail.com'
             },
-        }
-    ];
+        
+    }];
+
+    const bodyElement = document.querySelector('body');
+    const ulElement = document.createElement('ul');
+
+//console.log(ansatte[6].yrke[0])
+ansatte.forEach((ansatte) => {
+    //console.log(ansatte.person.fornavn);
+    const liElement = document.createElement('li');
+    liElement.textContent = `
+        ${ansatte.person.fornavn}
+        ${ansatte.person.etternavn}
+        (${ansatte.yrke[0]}) epost: ${ansatte.adresse.epost}
+        `;
+
+    ulElement.appendChild(liElement)
+
+});
+
+bodyElement.appendChild(ulElement);
 
 console.log(ansatte);
+
+
+//// map
+
+const ansatteEpost = ansatte.map(person => {
+    return {
+        epost: person.adresse.epost,
+        født: person.person.født
+    }
+});
+
+console.log(ansatteEpost);
+
+const yrkeAnsatte = ansatte.filter(ansatte => ansatte.person.yrke.includes('Lærer')
+    )
