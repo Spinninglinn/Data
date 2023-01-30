@@ -36,6 +36,48 @@ const names = ['Thomas',
 //names.reverse(); // reverserer navnrekken
 
 console.log(names.slice(1, 3)); // tar bort eller beholde forskjellige elementer
-console.log(names.length)
-console.log(names)
+console.log(names.length);
 console.log(names.includes('Harry'));
+names[0] = 'Asbjørn'; // legger til navn, og overskriver sånn at første navn blir dette
+console.log(names);
+
+
+//__________________________________________////
+// OBJECTS ///
+
+const person = {
+    firstName: 'Linn',
+    lastName: 'Øst',
+    age: 36,
+    hobbier: ('hoopdance', 'danse', 'drikke'),
+    kjønn: 'jente',
+    isWorking: true,
+    // isteden for å lage koden const firstName.
+//console.log (person.firstName)
+//person.firstName = 'Ole'
+
+}
+
+
+const persons = [
+    {
+        firstName: 'Linn',
+        age: 36,
+
+    },
+    {
+        firstName: 'Emil',
+        age: 32,
+    },
+    {
+        firstName: 'Silje',
+        age: 28,
+        hobby: ['strikke', 'gaming']
+    }
+
+]
+console.log(persons);
+console.clear;
+console.log(`Silje sin hoved hobby er: ${persons[2].hobby[1]}`);
+
+
