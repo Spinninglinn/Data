@@ -18,36 +18,12 @@
 //}
 
 
-//kilde: https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API
-/*function storageAvailable(type) {
-    let storage;
-    try {
-        storage = window[type];
-        const x = '__storage_test__';
-        storage.setItem(x, x);
-        storage.removeItem(x);
-        return true;
-    }
-    catch (e) {
-        return e instanceof DOMException && (
-            // everything except Firefox
-            e.code === 22 ||
-            // Firefox
-            e.code === 1014 ||
-            // test name field too, because code might not be present
-            // everything except Firefox
-            e.name === 'QuotaExceededError' ||
-            // Firefox
-            e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
-            // acknowledge QuotaExceededError only if there's something already stored
-            (storage && storage.length !== 0);
-    }
-}*/
+// inspiration from a code given me by ChatGPT
 
 // Get references to the input field, add button, and shopping list
-const itemInput = document.getElementById("item-input");
-const addButton = document.getElementById("add-button");
-const list = document.getElementById("list");
+const itemInput = document.getElementById("itemInput");
+const addButton = document.getElementById("addButton");
+const liste = document.getElementById("liste");
 
 // An array to keep track of all the items in the shopping list
 let items = [];
@@ -67,12 +43,12 @@ function addItemToList(item) {
   listItem.addEventListener("click", function() {
     removeItemFromList(item);
   });
-  list.appendChild(listItem);
+  liste.appendChild(listItem);
 }
 
 // Remove an item from the shopping list
 function removeItemFromList(item) {
-  list.removeChild(event.target);
+  liste.removeChild(event.target);
   items = items.filter(i => i !== item);
   updateLocalStorage();
 }
