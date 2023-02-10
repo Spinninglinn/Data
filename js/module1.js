@@ -1,24 +1,4 @@
-
-// kilde: https://www.geeksforgeeks.org/how-to-remove-an-added-list-items-using-javascript/
-//function addItem() {
-  //  const aElement = document.getElementById("handleliste");
-  //  const vare = document.getElementById("vare");
-  //  const li = document.createElement("li");
-  //  li.setAttribute('li', vare.value);
-  //  li.appendChild(document.createTextNode(vare.value));
-  //  aElement.appendChild(li);
-
-//}
-
-//function removeItem() {
-   // const aElement = document.getElementById("handleliste");
-   // const vare = document.getElementById("vare");
-   // const item = document.getElementById(vare.value);
-   // aElement.removeChild(item);
-//}
-
-
-// inspiration from a code given me by ChatGPT
+// inspiration from a code given me by ChatGPT and help from Syver
 
 // Get references to the input field, add button, and shopping list
 const itemInput = document.getElementById("itemInput");
@@ -30,42 +10,44 @@ let items = [];
 
 // Load the items from local storage if they exist
 if (localStorage.getItem("items")) {
-  items = JSON.parse(localStorage.getItem("items"));
-  items.forEach(item => {
+    items = JSON.parse(localStorage.getItem("items"));
+    items.forEach((item) => {
     addItemToList(item);
-  });
+    });
 }
 
 // Add a new item to the shopping list
 function addItemToList(item) {
-  const listItem = document.createElement("li");
-  listItem.innerHTML = item;
-  listItem.addEventListener("click", function() {
-    removeItemFromList(item);
-  });
-  liste.appendChild(listItem);
-}
+    const listItem = document.createElement("li");
+    const listDelete = document.createElement("button");
+    listDelete.className = "listDelete";
+    const listSpan = document.createElement("span");
+    listSpan.className = "listSpan";
+    listSpan.innerHTML = item;
 
-// Remove an item from the shopping list
-function removeItemFromList(item) {
-  liste.removeChild(event.target);
-  items = items.filter(i => i !== item);
-  updateLocalStorage();
+    listItem.prepend(listDelete);
+    listItem.appendChild(listSpan);
+    liste.appendChild(listItem);
+
+    listDelete.addEventListener("click", () => {
+        listItem.parentNode.removeChild(listItem);
+        items = items.filter((i) => i !== item);
+        updateLocalStorage();
+    });
 }
 
 // Update the items in local storage
 function updateLocalStorage() {
-  localStorage.setItem("items", JSON.stringify(items));
+    localStorage.setItem("items", JSON.stringify(items));
 }
 
 // Add the item when the add button is clicked
-addButton.addEventListener("click", function() {
-  const item = itemInput.value;
-  if (item) {
-    items.push(item);
-    addItemToList(item);
-    itemInput.value = "";
-    updateLocalStorage();
-  }
+addButton.addEventListener("click", function () {
+    const item = itemInput.value;
+    if (item) {
+        items.push(item);
+        addItemToList(item);
+        itemInput.value = "";
+        updateLocalStorage();
+    }
 });
-
