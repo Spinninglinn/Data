@@ -51,3 +51,5 @@ addButton.addEventListener("click", function () {
         updateLocalStorage();
     }
 });
+
+console.log();
