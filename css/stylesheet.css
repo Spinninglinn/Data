@@ -12,9 +12,19 @@ body {
 }
 
 header {
+    display: flex;
+    flex-wrap: nowrap;
     text-align: center;
     margin-top: 3rem;
     padding: 0.5rem 0.5rem;
+}
+
+.metalhand {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 4.5rem; 
+    width: 4rem;
+    margin: 1rem 1rem 1rem;
 }
 
 .handleliste {
@@ -24,6 +34,11 @@ header {
 #itemInput {
     width: 50%;
     margin: 1rem;
+    box-shadow: 0.2rem 0.2rem 0.5rem #1c1041;
+    border-radius: 3rem;
+    padding: 1rem 1.3rem;
+
+
 }
 
 input[type=text] {
@@ -31,13 +46,16 @@ input[type=text] {
     padding: 0.8rem 1.3rem;
     margin: 0.5rem 0;
     box-sizing: border-box;
+    min-width: 3rem;
   }
 
   #addButton {
     background-color: #472a9e;
     border: none;
+    border-radius: 50%;
     color: white;
-    padding: 1rem 2rem;
+    padding: 1rem 1.3rem;
+    position: inherit;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -47,13 +65,15 @@ input[type=text] {
 
 li {
     list-style: none;
+    font-size: 1.4rem;
 }
 
 .listDelete {
-    background-image: url(../assets/kryss_button.svg);
-    width: 1.6rem;
-    height: 1.2rem;
+    background-image: url(../assets/delete.svg);
+    width: 1rem;
+    height: 1rem;
     background-color: transparent;
+    margin-right: 0.5rem;
 
 }
 
