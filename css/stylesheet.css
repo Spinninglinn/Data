@@ -2,6 +2,8 @@
 
 html {
     font-size: 100%; /* 16px */
+    max-width: 1080px;
+    margin: 0;
 }
 
 body {
@@ -12,11 +14,36 @@ body {
 header {
     text-align: center;
     margin-top: 3rem;
+    padding: 0.5rem 0.5rem;
 }
 
 .handleliste {
     margin-left: 10rem;
 }
+
+#itemInput {
+    width: 50%;
+    margin: 1rem;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 0.8rem 1.3rem;
+    margin: 0.5rem 0;
+    box-sizing: border-box;
+  }
+
+  #addButton {
+    background-color: #472a9e;
+    border: none;
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    box-shadow: 0.2rem 0.2rem 0.5rem #1c1041; 
+  }
 
 li {
     list-style: none;
@@ -26,16 +53,7 @@ li {
     background-image: url(../assets/kryss_button.svg);
     width: 1.6rem;
     height: 1.2rem;
-    object-fit: fill;
     background-color: transparent;
 
 }
 
-#addButton{
-    background-image: url(../assets/smiley_face.svg);
-    object-fit: contain;
-    background-color: transparent;
-    height: 3rem;
-    width: 2.6rem;
-    background-repeat: no-repeat;
-}
