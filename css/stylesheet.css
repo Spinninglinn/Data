@@ -26,37 +26,40 @@ header {
     width: 4rem;
 }
 
-.handleliste {
+
+
+.topContainer{
     display: flex;
     flex-wrap: nowrap;
+    flex-direction: row;
     justify-content: center;
-    flex-direction: column;
+    margin: 2rem;
 }
 
 #itemInput {
     display: flex;
     flex-wrap: nowrap;
     width: 50%;
-    margin: 1rem;
     box-shadow: 0.2rem 0.2rem 0.5rem #1c1041;
     border-radius: 3rem;
-    padding: 1rem 1.3rem;
-
-
+    max-height: 3.2rem;
 }
 
 input[type=text] {
     width: 100%;
-    padding: 0.8rem 1.3rem;
+    
     margin: 0.5rem 0;
     box-sizing: border-box;
     min-width: 3rem;
   }
 
   #addButton {
+    max-width: 3.4rem;
+    max-height: 3.2rem;
     background-color: #472a9e;
     border: none;
     border-radius: 5rem;
+    margin: 1rem;
     color: white;
     padding: 1rem 1.3rem;
     text-align: center;
@@ -69,10 +72,12 @@ input[type=text] {
 li {
     display: flex;
     flex-wrap: nowrap;
-    align-items: flex-end;
     list-style: none;
     font-size: 1.4rem;
+    align-items: center;
 }
+
+
 
 .listDelete {
     background-image: url(../assets/delete.svg);
