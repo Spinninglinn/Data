@@ -52,4 +52,4 @@ addButton.addEventListener("click", function () {
     }
 });
 
-console.log();
+console.log(addItemToList);

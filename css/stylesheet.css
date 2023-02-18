@@ -14,7 +14,7 @@ body {
 header {
     display: flex;
     flex-wrap: nowrap;
-    text-align: center;
+    justify-content: center;
     margin-top: 3rem;
     padding: 0.5rem 0.5rem;
 }
@@ -24,14 +24,18 @@ header {
     flex-wrap: nowrap;
     height: 4.5rem; 
     width: 4rem;
-    margin: 1rem 1rem 1rem;
 }
 
 .handleliste {
-    margin-left: 10rem;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    flex-direction: column;
 }
 
 #itemInput {
+    display: flex;
+    flex-wrap: nowrap;
     width: 50%;
     margin: 1rem;
     box-shadow: 0.2rem 0.2rem 0.5rem #1c1041;
@@ -52,10 +56,9 @@ input[type=text] {
   #addButton {
     background-color: #472a9e;
     border: none;
-    border-radius: 50%;
+    border-radius: 5rem;
     color: white;
     padding: 1rem 1.3rem;
-    position: inherit;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -64,6 +67,9 @@ input[type=text] {
   }
 
 li {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-end;
     list-style: none;
     font-size: 1.4rem;
 }
