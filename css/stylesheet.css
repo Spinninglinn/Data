@@ -7,9 +7,10 @@ html {
 }
 
 body {
-    background-color: rgb(43, 167, 158);
+    background-image: url(../assets/background-noise.png);
     font-family: 'Dosis', sans-serif;
 }
+
 
 header {
     display: flex;
