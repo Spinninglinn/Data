@@ -2,13 +2,13 @@
 
 html {
     font-size: 100%; /* 16px */
-    max-width: 1080px;
-    margin: 0;
+    justify-content: center;
 }
 
 body {
     background-image: url(../assets/background-noise.png);
     font-family: 'Dosis', sans-serif;
+    color: #FFF9EC
 }
 
 
@@ -18,6 +18,8 @@ header {
     justify-content: center;
     margin-top: 3rem;
     padding: 0.5rem 0.5rem;
+    background-color: #472a9e;
+    background-blend-mode: soft-light;
 }
 
 .metalhand {
@@ -25,6 +27,7 @@ header {
     flex-wrap: nowrap;
     height: 4.5rem; 
     width: 4rem;
+    margin-right: 1rem;
 }
 
 
@@ -43,6 +46,7 @@ header {
     width: 50%;
     box-shadow: 0.2rem 0.2rem 0.5rem #1c1041;
     border-radius: 3rem;
+    background-color: #FFF9EC;
     
 }
 
@@ -63,13 +67,12 @@ input[type=text] {
     border: none;
     border-radius: 5rem;
     margin: 1rem;
-    color: white;
+    color: #FFF9EC;
     padding: 1rem 1.3rem;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 1rem;
-    box-shadow: 0.2rem 0.2rem 0.5rem #1c1041; 
+    font-size: 1.2rem;
   }
 
 li {
