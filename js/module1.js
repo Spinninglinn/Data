@@ -43,6 +43,16 @@ addButton.addEventListener("click", function () {
         items.push(item);
         addItemToList(item);
         itemInput.value = "";
+        
         updateLocalStorage();
     }
 });
+
+
+function createFooter() {
+const footer = document.createElement("footer");
+footer.innerText = "PLIS vær en footer nå!!!"; 
+document.body.appendChild(footer);  
+}
+
+
